@@ -1,8 +1,12 @@
+import Card from "./components/Card";
 
-const App = () => {
+import './global/global.css'
+
+function App() {
   return (
-    <div>
-    </div>
+    <>
+      <Card />
+    </>
   );
 }
 
