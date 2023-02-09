@@ -19,6 +19,17 @@ const alignElements = {
 }
 
 
+export const Container = styled.main `
+      height: 100vh;
+      background: ${color.secundary};
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 .25rem;
+      
+`
+
 export const ChallengeTitle = styled.div `
       margin-bottom: 1.5rem;
       span{
@@ -28,16 +39,6 @@ export const ChallengeTitle = styled.div `
 
       }
 `;
-
-export const Container = styled.main `
-      height: 100vh;
-      background: ${color.secundary};
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      
-`
 
 export const PassWrapper = styled.div `
       max-width: 390px;
