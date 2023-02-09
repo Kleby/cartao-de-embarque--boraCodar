@@ -1,19 +1,28 @@
 import React from 'react'
-import { BoadingInfor, Container, CustomerInfor, PassInfor, PassWrapper } from './styles';
+
+import {Airplane} from '@styled-icons/ionicons-sharp';
+
+import { AlignPass, AlignText, BoadingWrapper, BoardingContent, ChallengeTitle, Container, CustomerWrapper, LineDashed, PassInfor, PassWrapper, QrCodeWrapper, SmallNumber } from './styles';
+
+import QrCode from '../images/QrCode.svg';
 
 const Card = () => {
   return (
     <Container>
-      Cartão de embarque
+      <ChallengeTitle>
+        <span>Cartão de embarque</span>        
+      </ChallengeTitle>
       <PassWrapper>
         <PassInfor>
-         <div>
+         <AlignText>
             <p>
               Voo <span>RS995</span>
             </p>
-            <p>Data <span>23/05/2023</span></p>
-          </div>
-          <div>
+            <p>
+              Data <span>23/05/2023</span>
+            </p>
+          </AlignText>
+          <AlignPass>
             <div>
               <p>
                 São Paulo, Brasil
@@ -23,7 +32,7 @@ const Card = () => {
               </h2>
               <span>17:00</span>
             </div>
-            <span>icon airplan</span>
+            <i><Airplane /></i>
             <div>
               <p>
                 São Francisco, EUA
@@ -31,31 +40,36 @@ const Card = () => {
               <h2>
                 SFO
               </h2>
-              <span>04:48<i>+1</i></span>
+              <span style={{position: 'relative', marginRight:'.75rem'}}>04:48<SmallNumber>+1</SmallNumber></span>
             </div>
-          </div>
+          </AlignPass>
         </PassInfor>
-        <div>
-          <CustomerInfor>
+        <LineDashed >
+          <span />
+        </LineDashed>
+        <AlignText>
+          <CustomerWrapper>
             <p>Passageiro <span>João Kleby</span></p>
             <p>Assento <span>28A</span></p>
-          </CustomerInfor>
-        </div>
-        <BoadingInfor>
-          <div>
+          </CustomerWrapper>
+        </AlignText>
+        <LineDashed >
+          <span />
+        </LineDashed>
+        <BoadingWrapper>
+          <BoardingContent>
             <div>
-              <p>Embarque <span>16:15</span></p>
+              <p>Embarque <span className='hour'>16:15</span></p>
               <p>Terminal <span>2</span></p>
               <p>Portão <span>15</span></p>
             </div>
-          </div>
-          <div>
-            <span>QRcode</span>
+          </BoardingContent>
+            <QrCodeWrapper> <img src={QrCode} alt="codigo qr" />
             <p>
               Grupo de embarque: 3
             </p>
-          </div>
-        </BoadingInfor>
+            </QrCodeWrapper>
+        </BoadingWrapper>
       </PassWrapper>
     </Container>
   )
